@@ -1,0 +1,22 @@
+services:
+  fortigate-mcp-server:
+    image: vmartin3355/fortigate-mcp:latest
+    container_name: fortigate-mcp-server
+    restart: unless-stopped
+    ports:
+      - "8814:8814"
+    volumes:
+      - ./config/config.json:/app/config/config.json
+      - ./devices.yaml:/app/devices.yaml:ro
+      - fortigate-logs:/app/logs
+    environment:
+      - FORTIGATE_MCP_CONFIG=/app/config/config.json
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  fortigate-logs:
+    driver: local

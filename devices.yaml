@@ -1,0 +1,32 @@
+# â”€â”€ FortiGate devices â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Each entry under devices: is a FortiGate appliance this MCP server manages.
+# auth: use api_token (preferred), username+password, or ssh_user+ssh_password (SSH-only).
+#
+# devices:
+#   fw-hq:
+#     host: "192.168.1.1"
+#     port: 443
+#     api_token: "your-api-token-here"
+#     verify_ssl: false
+#     timeout: 30
+#     vdom: "root"
+#     ssh_user: "admin"
+#     ssh_password: "your-ssh-password"
+#     ssh_port: 22
+
+# â”€â”€ FortiManager instances (source of truth for managed devices) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Each entry under fortimanagers: is queried live on every tool call â€” no caching.
+# auth: use api_token (preferred) OR username+password.
+# adoms: "all" to enumerate all ADOMs, or list specific ones: ["CustomerA", "CustomerB"]
+# proxy_calls: false = MCP calls FortiGates directly (needs network path to each FGT)
+#              true  = MCP tunnels all calls through FMG /sys/proxy/json (only FMG reachable)
+#
+# fortimanagers:
+#   fmg-primary:
+#     host: "10.0.0.1"
+#     port: 443
+#     api_token: "your-fmg-api-token-here"
+#     verify_ssl: false
+#     timeout: 30
+#     adoms: "all"
+#     proxy_calls: true
