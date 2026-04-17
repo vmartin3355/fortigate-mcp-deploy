@@ -13,7 +13,7 @@ FortiManager instances through the Model Context Protocol (MCP).
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/YOURUSERNAME/fortigate-mcp-deploy.git
+git clone https://github.com/vmartin3355/fortigate-mcp-deploy.git
 cd fortigate-mcp-deploy
 ```
 
